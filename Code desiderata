@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision 2045 : L'Artisan Numérique</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.75rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0F172A 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .flow-step {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #CBD5E1;
+        }
+        .flow-step::before {
+            content: '';
+            position: absolute;
+            left: -0.56rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #06B6D4;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+    </style>
+
+    <!-- 
+    PLAN NARRATIVE:
+    1. Introduction: L'identité de "L'Artisan Numérique" en 2045.
+    2. Section 1 - La Finalité : Analyse du transfert de valeur du répétitif vers l'humain (Stacked Bar).
+    3. Section 2 - L'Identité Professionnelle : Le paradoxe Luxe/Digital (Radar Chart).
+    4. Section 3 - L'Éthique de la Data : Le point d'équilibre entre personnalisation et respect (Scatter Plot).
+    5. Section 4 - Mode de vie : La réalité "Bali Native" (Doughnut Chart + KPIs).
+    -->
+</head>
+<body class="antialiased">
+
+    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tight text-slate-800">PROJET 2045</div>
+            <div class="text-sm font-medium text-cyan-600">L'Artisan Numérique</div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-24">
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-900 leading-tight">
+                    <span class="gradient-text">Destination 2045</span><br>
+                    L'Excellence Invisible
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Mon ambition n'est pas technologique, elle est émotionnelle. En 2045, je suis devenu un artisan du numérique : un expert capable d'utiliser des outils d'une complexité extrême pour créer des expériences d'une simplicité et d'une humanité absolues.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-semibold border border-cyan-100">🌊 Digital Native à Bali</span>
+                    <span class="px-4 py-2 bg-amber-50 text-amber-700 rounded-full text-sm font-semibold border border-amber-100">🏆 Impact Stratégique</span>
+                    <span class="px-4 py-2 bg-slate-50 text-slate-700 rounded-full text-sm font-semibold border border-slate-200">🏄‍♂️ Équilibre Surf & Tech</span>
+                </div>
+            </div>
+            
+            <div class="glass-card p-8 bg-gradient-to-br from-slate-50 to-cyan-50 border-t-4 border-cyan-500">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800">Le Manifeste</h3>
+                        <p class="text-sm text-slate-500">Objectifs de Performance Humaine</p>
+                    </div>
+                    <div class="text-4xl">💎</div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-600">Opérationnalité Technique</span>
+                            <span class="text-cyan-600">Expertise "Monstre"</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-cyan-600 h-2 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-600">Impact & Influence</span>
+                            <span class="text-amber-500">Global</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-amber-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-600">Santé & Sport</span>
+                            <span class="text-emerald-500">Optimal</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 rounded text-xs font-bold uppercase tracking-wide">Philosophie de Valeur</div>
+                    <h2 class="text-3xl font-bold text-slate-800">La Finalité : L'Essence de l'Humain</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        L'IA n'est que le levier qui permet de libérer du temps et de l'énergie humaine. En 2045, ma réussite se mesure à ma capacité à automatiser le prévisible pour réinvestir le singulier : l'émotion, le jugement et la création.
+                    </p>
+                    <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-amber-500">
+                        <p class="italic text-slate-700 text-sm">"Réinvestir là où l'humain a le plus de valeur : dans la relation et le sens."</p>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2 flex flex-col justify-center">
+                    <div class="mb-4 text-center">
+                        <h3 class="text-lg font-semibold text-slate-700">Répartition de la Valeur Ajoutée (2025 vs 2045)</h3>
+                        <p class="text-xs text-slate-500">Visualisation du transfert d'énergie du technique vers le relationnel</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">La Sophistication du Matériau Numérique</h2>
+                <p class="text-slate-600">
+                    Maîtriser le temps long du luxe et l'immédiateté du digital. En 2045, je traite la technologie comme un matériau noble : avec exigence, patience et une vision claire de l'excellence.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-xl h-full flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl font-serif">L</div>
+                    <h3 class="text-xl font-bold text-amber-400 mb-6">L'Exigence de l'Artisan</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-cyan-600 flex items-center justify-center text-white font-bold text-sm">1</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Emancipation Créative</h4>
+                                <p class="text-sm text-slate-300">Rendre l'outil invisible pour laisser émerger le génie humain.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-cyan-600 flex items-center justify-center text-white font-bold text-sm">2</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Transmission & Durabilité</h4>
+                                <p class="text-sm text-slate-300">Construire une valeur qui s'inscrit dans le temps long.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-cyan-600 flex items-center justify-center text-white font-bold text-sm">3</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold">Maîtrise du Paradoxe</h4>
+                                <p class="text-sm text-slate-300">Accélérer le digital sans sacrifier la patience du savoir-faire.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="text-center mb-4">
+                        <h3 class="font-bold text-slate-700">Profil de Compétences 2045</h3>
+                        <p class="text-xs text-slate-500">Équilibre entre expertise technique et vision stratégique</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-50 rounded-3xl p-8 md:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 order-2 lg:order-1">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-slate-700">La Responsabilité de l'Écoute</h3>
+                            <div class="text-xs px-2 py-1 bg-emerald-100 text-emerald-800 rounded">Personnalisation vs Intrusion</div>
+                        </div>
+                        <div class="chart-container" style="height: 400px;">
+                            <canvas id="ethicsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 order-1 lg:order-2 space-y-6">
+                    <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-bold uppercase tracking-wide">Responsabilité</div>
+                    <h2 class="text-3xl font-bold text-slate-800">Une Data Éthique</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Derrière chaque point de donnée se trouve un individu. En 2045, je suis garant d'un numérique qui respecte la sensibilité humaine. La personnalisation n'est plus une manipulation, mais un service discret et pertinent.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-center">
+                            <span class="mr-2 text-emerald-500">✓</span>
+                            <span>Respect absolu de la vie privée.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2 text-emerald-500">✓</span>
+                            <span>Transparence des algorithmes.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-2 text-emerald-500">✓</span>
+                            <span>Valeur ajoutée réelle pour l'utilisateur.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Le Quotidien Bali Native</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mt-2">
+                    L'aboutissement d'un parcours exigeant : une vie où la performance digitale finance une liberté totale dans un cadre exceptionnel.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center">
+                    <h3 class="font-bold text-slate-700 mb-4">Équilibre de Vie (24h)</h3>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="lifestyleChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-sm font-medium text-slate-600">Cycle de Performance</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-slate-400 text-sm uppercase font-bold tracking-wider">Liberté Financière</div>
+                            <div class="text-4xl font-bold mt-2 text-amber-400">100k <span class="text-lg text-slate-400">Target</span></div>
+                        </div>
+                        <div class="mt-8 text-sm text-slate-300">
+                            Fruit d'une expertise rare et d'un impact direct sur les organisations.
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-500 to-teal-600 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+                        <div>
+                            <div class="text-cyan-100 text-sm uppercase font-bold tracking-wider">Géographie</div>
+                            <div class="text-4xl font-bold mt-2">Bali Base</div>
+                        </div>
+                        <div class="mt-8 flex items-end justify-between">
+                            <span class="text-sm text-cyan-50">Surf quotidien</span>
+                            <span class="text-3xl">🏄‍♂️</span>
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-2 bg-white border-2 border-slate-100 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
+                        <div class="flex-shrink-0 text-5xl">🧠</div>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">Santé Mentale & Créativité</h4>
+                            <p class="text-sm text-slate-600 mt-1">
+                                Le temps libéré par la technologie est réinvesti dans l'expérimentation, la prise de risque et la production de l'exceptionnel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">Feuille de Route Stratégique 2045.</p>
+            <p class="text-xs mt-2 opacity-50">Conçu selon les principes de l'Artisanat Numérique.</p>
+        </div>
+    </footer>
+
+    <script>
+        function splitLabel(str, maxLen = 16) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= maxLen) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#64748B';
+        
+        const commonTooltip = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            },
+            backgroundColor: '#1E293B',
+            titleFont: { size: 13, weight: '600' },
+            padding: 12,
+            cornerRadius: 8,
+            displayColors: true
+        };
+
+        const ctxTime = document.getElementById('timeChart').getContext('2d');
+        new Chart(ctxTime, {
+            type: 'bar',
+            data: {
+                labels: ['Aujourd\'hui', 'Moi en 2045'],
+                datasets: [
+                    {
+                        label: 'Gestion & Répétition',
+                        data: [65, 5], 
+                        backgroundColor: '#CBD5E1',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Expertise Technique',
+                        data: [25, 45], 
+                        backgroundColor: '#06B6D4',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Humain & Création',
+                        data: [10, 50], 
+                        backgroundColor: '#F59E0B',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { 
+                        stacked: true, 
+                        grid: { borderDash: [4, 4], color: '#E2E8F0' },
+                        ticks: { callback: function(value){ return value + '%' }}
+                    }
+                },
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+                }
+            }
+        });
+
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        const radarLabels = [
+            'Opérationnalité', 
+            'Créativité Pure', 
+            'Savoir-faire Luxe', 
+            'Agilité Digital', 
+            'Éthique & Sens', 
+            'Impact Client'
+        ].map(l => splitLabel(l, 14));
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: radarLabels,
+                datasets: [{
+                    label: 'Profil Artisan 2045',
+                    data: [100, 95, 90, 95, 100, 95],
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                    borderColor: '#06B6D4',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#06B6D4',
+                    borderWidth: 2,
+                    pointRadius: 4
+                },
+                {
+                    label: 'Profil Standard',
+                    data: [75, 50, 25, 80, 50, 60],
+                    backgroundColor: 'rgba(203, 213, 225, 0.2)',
+                    borderColor: '#94A3B8',
+                    pointBackgroundColor: 'transparent',
+                    pointBorderColor: 'transparent',
+                    borderWidth: 2,
+                    borderDash: [5, 5]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#E2E8F0' },
+                        grid: { color: '#E2E8F0' },
+                        pointLabels: {
+                            font: { size: 11, weight: '600' },
+                            color: '#475569'
+                        },
+                        ticks: { display: false, max: 100 }
+                    }
+                },
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+                }
+            }
+        });
+
+        const ctxEthics = document.getElementById('ethicsChart').getContext('2d');
+        new Chart(ctxEthics, {
+            type: 'bubble',
+            data: {
+                datasets: [
+                    {
+                        label: 'Vision 2045 (Artisanat)',
+                        data: [{x: 10, y: 95, r: 18}], 
+                        backgroundColor: '#10B981',
+                        borderColor: '#047857'
+                    },
+                    {
+                        label: 'Marketing Standard',
+                        data: [{x: 80, y: 30, r: 12}], 
+                        backgroundColor: '#EF4444',
+                        borderColor: '#B91C1C'
+                    },
+                    {
+                        label: 'Luxe Traditionnel',
+                        data: [{x: 20, y: 50, r: 10}], 
+                        backgroundColor: '#94A3B8',
+                        borderColor: '#64748B'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Niveau d\'Intrusion (Invisible -> Élevé)' },
+                        min: 0, max: 100,
+                        grid: { color: '#E2E8F0' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Pertinence & Valeur Humaine' },
+                        min: 0, max: 100,
+                        grid: { color: '#E2E8F0' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) { return context[0].dataset.label; },
+                            label: function(context) { return `Intrusion: ${context.raw.x}%, Valeur: ${context.raw.y}%`; }
+                        },
+                        backgroundColor: '#1E293B',
+                        padding: 12,
+                        cornerRadius: 8
+                    },
+                    legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+                }
+            }
+        });
+
+        const ctxLife = document.getElementById('lifestyleChart').getContext('2d');
+        const lifeLabels = ['Deep Work / Tech', 'Sport & Surf', 'Connexion Sociale', 'Récupération'].map(l => splitLabel(l, 14));
+
+        new Chart(ctxLife, {
+            type: 'doughnut',
+            data: {
+                labels: lifeLabels,
+                datasets: [{
+                    data: [25, 25, 20, 30],
+                    backgroundColor: [
+                        '#0F172A', 
+                        '#06B6D4', 
+                        '#F59E0B', 
+                        '#E2E8F0'  
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '75%',
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
